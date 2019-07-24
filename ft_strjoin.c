@@ -23,21 +23,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
 	char	*res_start;
+	int		test;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	result = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (result == NULL)
+	test = ft_strlen(s1) + ft_strlen(s2);
+	if ((result = (char*)ft_memalloc(test + 1)) == NULL)
 		return (NULL);
 	else
 	{
 		res_start = result;
-		while (*s1)
+		while (s1 != NULL && *s1)
 			*result++ = *s1++;
-		while (*s2)
+		while (s2 != NULL && *s2)
 			*result++ = *s2++;
 		*result = '\0';
-		result = &result[0];
 		return (res_start);
 	}
 }

@@ -21,10 +21,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	const char	*tmp;
+	char	*info;
 
-	tmp = s;
-	while (*tmp)
-		tmp++;
-	return (tmp - s);
+	info = (char*)s;
+	while (info != NULL && *info != '\0')
+		info++;
+	return (info - s);
 }

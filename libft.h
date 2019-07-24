@@ -6,7 +6,7 @@
 /*   By: spoole <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 14:43:31 by spoole            #+#    #+#             */
-/*   Updated: 2018/12/17 16:45:37 by spoole           ###   ########.fr       */
+/*   Updated: 2019/07/24 13:20:23 by spoole           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,28 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct			s_ftoa
+{
+	char				*res;
+	char				*temp;
+	char				*clean;
+	uintmax_t			tmp;
+	int					neg;
+	int					size;
+	int					dot;
+	int					i;
+	int					sub_z;
+	int					str_len;
+}						t_ftoa;
+
 /*
 **	Conversion
 */
 int						ft_atoi(const char *str);
-char					*ft_itoa(int n);
+char					*ft_itoa(intmax_t n);
+char					*ft_itoab_unsigned(uintmax_t num, int base);
+char					*ft_itoab_signed(intmax_t num, int base);
+char					*ft_ftoa(long double num, int precision);
 /*
 **	String Manipulation & Characterization
 */
@@ -56,6 +73,7 @@ char					*ft_strmapi(char const *s,
 char					*ft_strsub(char const *s, unsigned int start,
 						size_t len);
 char					*ft_strjoin(char const *s1, char const *s2);
+char					*ft_strbuf(char *s1, size_t pad);
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
 /*
@@ -82,6 +100,7 @@ int						ft_isascii(int c);
 int						ft_isprint(int c);
 int						ft_toupper(int c);
 int						ft_tolower(int c);
+int						ft_isnum(char q);
 /*
 **	OutPUT
 */
