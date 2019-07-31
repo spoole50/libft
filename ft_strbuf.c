@@ -29,10 +29,9 @@ char	*ft_strbuf(char *s1, size_t pad)
 	result = NULL;
 	i = 0;
 	x = (s1 == NULL) ? pad : pad + ft_strlen(s1) + 1;
-	result = (char*)malloc(sizeof(char) * x);
-	ft_bzero(result, x);
-	if (result == NULL)
+	if ((result = (char*)malloc(sizeof(char) * x)) == NULL)
 		return (NULL);
+	ft_bzero(result, x);
 	if (s1 != NULL)
 	{
 		while (s1[i] != '\0')

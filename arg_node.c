@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 t_arg_node		*find_arg(t_arg_node *begin, int arg_num)
 {

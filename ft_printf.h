@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "libft.h"
 
 # define INPUT info->input
 # define INDEX info->in
