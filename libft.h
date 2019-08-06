@@ -60,7 +60,7 @@ int						ft_strequ(char const *s1, char const *s2);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
 char					*ft_strupr(char *str);
 char					*ft_strlwr(char *str);
-int     				ft_c_indx_str(char *str, char q);
+int     				ft_charspn(char *chset, char q);
 /*
 **	String Memory Managment (Including Manipulation)
 */
