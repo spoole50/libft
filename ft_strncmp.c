@@ -32,7 +32,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while (*s1c == *s2c && x < n)
 	{
-		if (*s1c == '\0')
+		if (*s1c == '\0' || x + 1 == n)
 			return (0);
 		s1c++;
 		s2c++;

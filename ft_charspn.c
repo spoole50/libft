@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- ** ft_charspn
- ** computes the string array index of character (q) in charset (str), else -1
- */
+/*
+** ft_charspn
+** computes the string array index of character (q) in charset (str), else -1
+*/
 
 #include "libft.h"
 
-int     ft_charspn(char *chset, char q)
+int		ft_charspn(char *chset, char q)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (chset[i] != '\0')
-    {
-        if (chset[i] == q)
-            return (i);
-        i++;
-    }
-    return (-1);
+	i = 0;
+	while (chset[i] != '\0')
+	{
+		if (chset[i] == q)
+			return (i);
+		i++;
+	}
+	return (-1);
 }
