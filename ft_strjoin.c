@@ -12,30 +12,32 @@
 
 /*
 **	ft_strjoin
-**	Allocates and returns a “fresh” string ending
-**	with ’\0’, result of the concatenation of s1 and s2.
+**	Allocates and returns a “fresh” NULL terminated string
+**	that is the result of the concatenation of s1 and s2.
 **	If the allocation fails the function returns NULL.
 */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*result;
-	char	*res_start;
-	int		test;
+	char	*res;
+    size_t	len;
 
-	test = ft_strlen(s1) + ft_strlen(s2);
-	if ((result = (char*)ft_memalloc(test + 1)) == NULL)
-		return (NULL);
-	else
-	{
-		res_start = result;
-		while (s1 != NULL && *s1)
-			*result++ = *s1++;
-		while (s2 != NULL && *s2)
-			*result++ = *s2++;
-		*result = '\0';
-		return (res_start);
-	}
+    len = 0;
+    if (s1 != NULL)
+      len += strlen(s1);
+    if (s2 != NULL)
+      len += strlen(s2);
+    if ((res = (char*)malloc(sizeof(char) * (len + 1))) == NULL) 
+        return (NULL);
+    else
+    {
+        while (s1 != NULL && *s1)
+            *res++ = *s1++;
+        while (s2 != NULL && *s2)
+            *res++ = *s2++;
+        *res = '\0';
+        return (res - len);
+    }
 }
