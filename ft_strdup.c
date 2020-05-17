@@ -24,7 +24,9 @@ char	*ft_strdup(const char *s1)
 	char *cpy;
 	char *start;
 
-	if ((cpy = (char*)malloc(sizeof(char) * ft_strlen(s1) + 1)) == NULL)
+	if (s1 == NULL)
+		return (NULL);
+	else if ((cpy = (char*)malloc(sizeof(char) * ft_strlen(s1) + 1)) == NULL)
 		return (NULL);
 	start = cpy;
 	while (*s1)
